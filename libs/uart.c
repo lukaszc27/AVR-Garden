@@ -39,6 +39,7 @@ LICENSE:
 #include <avr/io.h>
 #include <avr/interrupt.h>
 #include <avr/pgmspace.h>
+#include <stdlib.h>
 #include "uart.h"
 
 
@@ -450,6 +451,12 @@ void uart_puts(const char *s )
 
 }/* uart_puts */
 
+void uart_putint(int num)
+{
+	char buf[8];
+	itoa(num, buf, 10);
+	uart_puts(buf);
+}
 
 /*************************************************************************
 Function: uart_puts_p()

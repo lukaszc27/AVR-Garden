@@ -171,6 +171,8 @@ extern void uart_puts(const char *s );
  */
 extern void uart_puts_p(const char *s );
 
+extern void uart_putint(int num);
+
 /**
  * @brief    Macro to automatically put a string constant into program memory
  */
